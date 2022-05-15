@@ -15,7 +15,38 @@
         android:id="@+id/nav_gallery"
         android:name="emsi.pfa.smart_wattering_v0.ui.ferm.FermFragment"
         android:label="@string/menu_ferm"
-        tools:layout="@layout/fragment_ferm" />
+        tools:layout="@layout/fragment_ferm" >
+        <action
+            android:id="@+id/navigToParcell"
+            app:destination="@+id/nav_parcelle"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+        <action
+            android:id="@+id/navigTodetaillFerm"
+            app:destination="@+id/nav_detaillFerme"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detaillFerme"
+        android:name="emsi.pfa.smart_wattering_v0.ui.detaill.detaillFerme"
+        android:label="detaille Fragement"
+        tools:layout="@layout/fragment_detaillferme" />
+
+    <fragment
+        android:id="@+id/nav_parcelle"
+        android:name="emsi.pfa.smart_wattering_v0.ui.parcelle.ParcelleFragement"
+        android:label="Parcelle"
+        tools:layout="@layout/fragement_parcelle" >
+        <action
+            android:id="@+id/navToFerm"
+            app:destination="@+id/nav_gallery"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"

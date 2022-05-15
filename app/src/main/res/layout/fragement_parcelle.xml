@@ -4,15 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ferm.FermFragment"
-    android:id="@+id/fragment1"
-    >
-
-        <ListView
-            android:id="@+id/listferme"
-            tools:listitem="@layout/itemferme"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
+    tools:context=".ui.parcelle.ParcelleFragement">
+    <ListView
+        android:id="@+id/listparcelle"
+        tools:listitem="@layout/itemparcelle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

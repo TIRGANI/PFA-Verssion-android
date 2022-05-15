@@ -2,18 +2,36 @@ package emsi.pfa.smart_wattering_v0.ui.beans;
 
 public class Ferme {
     private int id;
-    private int num_parcel;
+    private int numParcel;
     private String photo;
     private static int cpt=0;
+    private User user;
 
-    public Ferme(int id, int num_parcel, String photo) {
-        this.id = id;
-        this.num_parcel = num_parcel;
-        this.photo = photo;
+    public int getNumParcel() {
+        return numParcel;
     }
-    public Ferme( int num_parcel, String photo) {
+
+    public void setNumParcel(int numParcel) {
+        this.numParcel = numParcel;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Ferme(int id, String photo, User user, int nbrParcel) {
+        this.id = id;
+        this.numParcel = nbrParcel;
+        this.photo = photo;
+        this.user=user;
+    }
+    public Ferme( int nbrParcel, String photo) {
         this.id = ++cpt;
-        this.num_parcel = num_parcel;
+        this.numParcel = nbrParcel;
         this.photo = photo;
     }
     public Ferme() { }
@@ -26,13 +44,6 @@ public class Ferme {
         this.id = id;
     }
 
-    public int getNum_parcel() {
-        return num_parcel;
-    }
-
-    public void setNum_parcel(int num_parcel) {
-        this.num_parcel = num_parcel;
-    }
 
     public String getPhoto() {
         return photo;

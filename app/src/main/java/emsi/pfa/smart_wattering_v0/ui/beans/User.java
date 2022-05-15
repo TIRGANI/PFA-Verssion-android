@@ -5,15 +5,15 @@ public class User {
     private String email;
     private String password;
     private String username;
-    private Ferme ferme;
+
     private Role role;
 
-    public User(int  userId, String email, String password, String username, Ferme ferme, Role role) {
+    public User(int  userId, String username,String password, String email,  Role role) {
         this.userId = userId;
         this.email = email;
         this.password = password;
         this.username = username;
-        this.ferme= ferme;
+
         this.role = role;
     }
 
@@ -51,13 +51,7 @@ public class User {
         this.username = username;
     }
 
-    public Ferme getFerme() {
-        return ferme;
-    }
 
-    public void setFerme(Ferme ferme) {
-        this.ferme = ferme;
-    }
 
     public Role getRole() {
         return role;

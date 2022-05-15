@@ -39,9 +39,9 @@ import emsi.pfa.smart_wattering_v0.ui.session.SessionManagement;
 public class Auth extends AppCompatActivity {
     Button b1, b2;
     EditText ed1, ed2;
-    String insertUrllo = "http://192.168.1.8:8090/users/all";
-    String insertferm = "http://192.168.1.8:8090/ferme/all";
-    String insertrole = "http://192.168.1.8:8090/role/all";
+    String insertUrllo = "http://10.0.2.2:8090/users/all";
+    String insertferm = "http://10.0.2.2:8090/ferme/all";
+    String insertrole = "http://10.0.2.2:8090/role/all";
     RequestQueue requestQueue;
     RequestQueue requestQueue2;
     RequestQueue requestQueue3;
@@ -80,10 +80,11 @@ public class Auth extends AppCompatActivity {
         if (service.findByName(ed1.getText().toString(), ed2.getText().toString())) {
             //session
             User user = service.findByNamee(ed1.getText().toString(), ed2.getText().toString());
+            Log.d("userssssssssssss",user.getRole().getNome());
             sessionManagement.saveSessione(user);
             moveToMainActivity();
         } else {
-            Toast.makeText(Auth.this, "Wrong"
+            Toast.makeText(getApplicationContext(), "Wrong Account !!!"
                     , Toast.LENGTH_SHORT).show();
 
             //   tx1.setVisibility(View.VISIBLE);
@@ -116,8 +117,8 @@ public class Auth extends AppCompatActivity {
         sessionManagement = new SessionManagement(Auth.this);
 
         getdatauser();
-        getdataferm();
-        getdatarole();
+       // getdataferm();
+       // getdatarole();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,10 +177,8 @@ public class Auth extends AppCompatActivity {
                 Collection<Ferme> fermes = new Gson().fromJson(response, type);
 
                 for (Ferme f : fermes) {
-                    Ferme s = new Ferme(f.getId(),f.getNum_parcel(),f.getPhoto());
+                    Ferme s = new Ferme(f.getId(),f.getPhoto(),f.getUser(),f.getNumParcel());
 
-                    //    Log.d("%%%",e.getUser_id()+"|"+e.getEmail()+"|"+ e.getPassword()+"|"+ e.getUsername()+"|"+ e.getFerme().getId()+"|"+e.getRole().getId());
-                    // Star s = new Star(e)
                     fermeService.create(s);
                 }
 
@@ -207,10 +206,7 @@ public class Auth extends AppCompatActivity {
                 Collection<User> user = new Gson().fromJson(response, type);
 
                 for (User e : user) {
-                    User s = new User(e.getUser_id(), e.getEmail() + "", e.getPassword() + "", e.getUsername() + "", e.getFerme(), e.getRole());
-
-                    //    Log.d("%%%",e.getUser_id()+"|"+e.getEmail()+"|"+ e.getPassword()+"|"+ e.getUsername()+"|"+ e.getFerme().getId()+"|"+e.getRole().getId());
-                    // Star s = new Star(e)
+                    User s = new User(e.getUser_id(), e.getUsername()+ "", e.getPassword() + "", e.getEmail() + "", e.getRole());
                     service.create(s);
                 }
 

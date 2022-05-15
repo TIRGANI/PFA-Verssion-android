@@ -4,12 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/activity_auth.xml" value="0.11979166666666667" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragement_parcelle.xml" value="0.10677083333333333" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_dashboard.xml" value="0.11979166666666667" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_detaillferme.xml" value="0.17552083333333332" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_ferm.xml" value="0.1111111111111111" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_gallery.xml" value="0.17552083333333332" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/fragment_profile.xml" value="0.11979166666666667" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/itemferme.xml" value="0.16666666666666666" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/itemparcelle.xml" value="0.17552083333333332" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/nav_header_main.xml" value="0.11979166666666667" />
+        <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/layout/showoptionferm.xml" value="0.17552083333333332" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/menu/activity_main_drawer.xml" value="0.17282051282051283" />
         <entry key="..\:/2_EMSI/4-Eme_annee/smartwatteringv0/app/src/main/res/menu/main.xml" value="0.11979166666666667" />
       </map>

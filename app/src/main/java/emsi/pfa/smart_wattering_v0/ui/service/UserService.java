@@ -57,7 +57,7 @@ public class UserService implements IDao<User> {
     }
     public Boolean findByName(String login,String password) {
         for (User s : users) {
-          //  Log.d("Username : "+s.getUsername(),"password"+s.getPassword());
+            Log.d("Username : "+s.getEmail(),"password"+s.getPassword());
             if (s.getUsername().equals(login) && s.getPassword().equals(password))
                 return true;
         }

@@ -19,9 +19,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import emsi.pfa.smart_wattering_v0.databinding.ActivityMainBinding;
 import emsi.pfa.smart_wattering_v0.ui.Auth;
+import emsi.pfa.smart_wattering_v0.ui.communicator.Communicator;
+import emsi.pfa.smart_wattering_v0.ui.parcelle.ParcelleFragement;
 import emsi.pfa.smart_wattering_v0.ui.session.SessionManagement;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements Communicator{
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -31,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,14 +49,19 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
+
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_parcelle)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+       // FragementParcelleBinding fragementParcelleBinding = new FragementParcelleBinding();
+
+        //getSupportFragmentManager().beginTransaction().replace(R.id.nav_slideshow,fragementParcelleBinding).commit()
     }
 
     @Override
@@ -85,5 +94,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+
+    @Override
+    public void passDataCom() {
+        ParcelleFragement parcelleFragement = new ParcelleFragement();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_gallery,parcelleFragement).commitNow();
+
+
+
+
     }
 }
